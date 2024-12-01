@@ -34,7 +34,8 @@ print(type(x))
         immutable, meaning they cannot be modified post-creation. We create them by placing a sequence of values separated by a comma 
         with or without the use of parentheses (). Like lists they can be declared without initialization. 
         
-        3.4 - Range: ..........
+        3.4 - Range: range() function returns a sequence of numbers between a range specified in the method parameters. Common usage
+        is for iteration. range(start[optional], stop, step[optional]). The method will only accept integers and not floats or any other. 
         
  
  """
@@ -90,9 +91,21 @@ print("Our numbers list converted to a tuple: ", tuple(numbers_list), "\n")
 # 3.3 - Accessing tuple items, same as we do with lists using index operator []
 print("My favorite trip to a foreign country was", countries_tuple[2], "and my least favorite was", countries_tuple[-1], "\n")
 
+# -------------------------------------------------------------------------------
 
-# 3.4 -
 
+# 3.4 - Example of using range() method within a for loop using step parameter as well to only print odd numbers
+
+for i in range(0, 10, 2):
+    print(i, end=" ")
+print("\n")
+
+
+# 3.4 - we can also decrement using the step parameter of the range() method
+
+for i in range(20, 1, -2):
+    print(i, end=" ")
+print("\n")
 
 
 # -------------------------------------------------------------------------------
@@ -102,9 +115,49 @@ print("My favorite trip to a foreign country was", countries_tuple[2], "and my l
     4. Mapping Data Types - Dictionaries 
         
         - A mapping is a data structure with a key-value pair that allows us to retrieve values using keys which makes things simpler. 
-        Dictionaries do not allow for duplicates. As of python 3.7 they are ordered. If we enter duplicates it will override. 
+        Dictionaries do not allow for duplicate keys. As of python 3.7 they are ordered. If we enter duplicates it will override. Note 
+        that keys are case sensitive. 
         
 """
 
 
+# 4 - Examples of a basic dictionary
+
+my_dict = {1: "One", 2: "Two", 3: "Three"}
+print(my_dict, "\n")
+
+
+# 4 - Dictionary with mixed keys and a tuple as a value for one of the keys
+
+my_dict2 = {"Name": "Enes", 1: [1,2,3,4,5]}
+print(my_dict2, "\n")
+
+# 4 - Creating a dictionary using the dict() constructor
+
+my_dict3 = dict({"Ellen": 91, "George": 85})
+print(my_dict3, "\n")
+
+
+#------------------------------------------------------------------------
+
+
+"""
+    
+    5. Set Types: set, frozenset
+    
+        5.1 - Set: an unordered collection with no duplicate elements. Basic uses include membership testing and eliminating duplicate entries.
+        Set objects also support mathematical operations like union, intersection, difference, and symmetric difference. We can use the set()
+        function to create one. Sets, unlike lists or tuples, cannot have multiple occurrences of the same element and store unordered values.
+            
+            Membership testing: checking if a collection of items contains a specific item. 
+    
+"""
+
+# Creating an empty set
+empty_set = set()
+
+
+# Notice the duplicate will not be output when printing
+fruits_set = {'Apple', 'Banana', 'Kiwi', 'Mango', 'Apple'}
+print(fruits_set)
 
